@@ -48,7 +48,7 @@ export const BuyNowSection: React.FC<BuyNowSectionProps> = ({ quantity, increase
    - Product: Muahib Festival Mega Combo Deal
    ${PRODUCT_DETAILS.split('\n').map(item => '   ' + item).join('\n')}
    - Quantity: ${formData.quantity}
-   - Price Per Unit: ₦55,000
+   - Price Per Unit: ₦57,000
    - Total Price: ₦${formData.totalPrice.toLocaleString()}
 
 💬 Additional Comments: ${formData.comments || 'None'}
@@ -75,7 +75,7 @@ export const BuyNowSection: React.FC<BuyNowSectionProps> = ({ quantity, increase
       <div className="bg-white p-6 rounded-lg shadow-md mb-8 sticky top-4">
         <h2 className="text-3xl font-bold mb-2">Muahib Festival Mega Combo</h2>
         <div className="flex items-center mb-4">
-          <p className="text-3xl font-bold text-blue-600 mr-3">₦55,000</p>
+          <p className="text-3xl font-bold text-blue-600 mr-3">₦57,000</p>
           <p className="text-lg line-through text-gray-500 mr-3">₦110,000</p>
           <span className="bg-red-100 text-red-700 px-2 py-1 rounded text-sm font-medium">50% OFF</span>
         </div>
