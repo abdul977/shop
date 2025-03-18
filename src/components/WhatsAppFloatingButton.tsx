@@ -26,7 +26,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
    - Product: Muahib Festival Mega Combo Deal
    ${PRODUCT_DETAILS.split('\n').map(item => '   ' + item).join('\n')}
    - Quantity: ${formData.quantity}
-   - Price Per Unit: ₦55,000
+   - Price Per Unit: ₦57,000
    - Total Price: ₦${formData.totalPrice.toLocaleString()}
 
 💬 Additional Comments: ${formData.comments || 'None'}

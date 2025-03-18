@@ -17,7 +17,7 @@ export const FooterBanner = () => {
 📦 Product Details:
 ${PRODUCT_DETAILS}
 
-💰 Special Offer Price: ₦55,000
+💰 Special Offer Price: ₦57,000
 🚚 Free Delivery Included
 
 Please provide more information about ordering. Thank you!`;
@@ -40,7 +40,7 @@ Please provide more information about ordering. Thank you!`;
    - Product: Muahib Festival Mega Combo Deal
    ${PRODUCT_DETAILS.split('\n').map(item => '   ' + item).join('\n')}
    - Quantity: ${formData.quantity}
-   - Price Per Unit: ₦55,000
+   - Price Per Unit: ₦57,000
    - Total Price: ₦${formData.totalPrice.toLocaleString()}
 
 💬 Additional Comments: ${formData.comments || 'None'}
@@ -63,7 +63,7 @@ Please provide more information about ordering. Thank you!`;
             onClick={() => setIsFormVisible(true)}
             className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-md transition-colors"
           >
-            Buy Now at ₦55,000
+            Buy Now at ₦57,000
           </button>
           <button
             onClick={handleWhatsAppMessage}

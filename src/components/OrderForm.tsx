@@ -22,7 +22,7 @@ export interface OrderFormData {
   totalPrice: number;
 }
 
-const PRICE_PER_UNIT = 55000;
+const PRICE_PER_UNIT = 57000;
 
 const PRODUCT_DETAILS = `
 • Premium SmartWatch with Heart Rate & BP Monitor
