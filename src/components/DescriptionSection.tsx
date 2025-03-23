@@ -14,11 +14,15 @@ interface TimeLeft {
 export const DescriptionSection = () => {
   const timeUnits: TimeUnit[] = ['days', 'hours', 'minutes', 'seconds'];
   const timeLabels = ['Days', 'Hours', 'Minutes', 'Seconds'];
+
+  // Set target date once when component mounts
+  const targetDate = React.useMemo(() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 2);
+    return date;
+  }, []);
+
   const calculateTimeLeft = (): TimeLeft => {
-    // Set target date to exactly 2 days from now
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 2);
-    
     const difference = +targetDate - +new Date();
     let timeLeft: TimeLeft = {};
 
