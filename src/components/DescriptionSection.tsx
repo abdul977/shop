@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Star, Package } from 'lucide-react';
 
+type TimeUnit = 'days' | 'hours' | 'minutes' | 'seconds';
+
 interface TimeLeft {
+  [key: string]: number | undefined;
   days?: number;
   hours?: number;
   minutes?: number;
@@ -9,6 +12,8 @@ interface TimeLeft {
 }
 
 export const DescriptionSection = () => {
+  const timeUnits: TimeUnit[] = ['days', 'hours', 'minutes', 'seconds'];
+  const timeLabels = ['Days', 'Hours', 'Minutes', 'Seconds'];
   const calculateTimeLeft = (): TimeLeft => {
     // Set target date to exactly 2 days from now
     const targetDate = new Date();
@@ -46,12 +51,12 @@ export const DescriptionSection = () => {
           <div className="bg-gradient-to-r from-red-500 to-red-700 text-white p-6 rounded-xl mb-12 text-center">
             <p className="text-xl font-bold mb-4">🚨 FLASH SALE ENDS IN:</p>
             <div className="grid grid-cols-4 gap-4 max-w-md mx-auto">
-              {['days', 'hours', 'minutes', 'seconds'].map((interval, index) => (
+              {timeUnits.map((interval, index) => (
                 <div key={index} className="bg-black/30 rounded-lg p-3">
                   <div className="text-2xl font-bold mb-1">
                     {timeLeft[interval] !== undefined ? timeLeft[interval] : '00'}
                   </div>
-                  <div className="text-xs">{['Days', 'Hours', 'Minutes', 'Seconds'][index]}</div>
+                  <div className="text-xs">{timeLabels[index]}</div>
                 </div>
               ))}
             </div>
