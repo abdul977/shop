@@ -60,7 +60,7 @@ export const HeroSection = () => {
               <span className="ml-2">4.9 (256 reviews)</span>
             </div>
             <div className="bg-white/20 rounded-lg p-3 sm:p-4 inline-block">
-              <p className="text-xl sm:text-2xl font-bold">₦55,000 <span className="text-base sm:text-lg font-normal text-gray-300 line-through">₦110,000</span></p>
+              <p className="text-xl sm:text-2xl font-bold">₦57,000 <span className="text-base sm:text-lg font-normal text-gray-300 line-through">₦110,000</span></p>
               <p className="text-yellow-300 font-semibold">50% OFF (Delivery Included)</p>
             </div>
           </div>
