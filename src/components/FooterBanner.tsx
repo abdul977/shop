@@ -33,7 +33,6 @@ Please provide more information about ordering. Thank you!`;
    - Phone: ${formData.phoneNumber}
    - Alt Phone: ${formData.alternativePhone || 'N/A'}
    - Address: ${formData.address}
-   - City: ${formData.city}
    - State: ${formData.state}
 
 📦 Order Details:

@@ -29,7 +29,6 @@ export const BuyNowSection: React.FC<BuyNowSectionProps> = ({ quantity, increase
         value: formData.totalPrice
       });
       await sendPurchaseEvent(
-        formData.email || '',
         formData.phoneNumber,
         formData.totalPrice
       );
@@ -41,7 +40,6 @@ export const BuyNowSection: React.FC<BuyNowSectionProps> = ({ quantity, increase
    - Phone: ${formData.phoneNumber}
    - Alt Phone: ${formData.alternativePhone || 'N/A'}
    - Address: ${formData.address}
-   - City: ${formData.city}
    - State: ${formData.state}
 
 📦 Order Details:
