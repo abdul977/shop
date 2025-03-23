@@ -1,7 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Shield, Star, Package } from 'lucide-react';
 
+interface TimeLeft {
+  days?: number;
+  hours?: number;
+  minutes?: number;
+  seconds?: number;
+}
+
 export const DescriptionSection = () => {
+  const calculateTimeLeft = (): TimeLeft => {
+    // Set target date to exactly 2 days from now
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 2);
+    
+    const difference = +targetDate - +new Date();
+    let timeLeft: TimeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      };
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  });
+
   return (
     <div className="bg-white py-16">
       <div className="container mx-auto px-4">
@@ -9,9 +46,11 @@ export const DescriptionSection = () => {
           <div className="bg-gradient-to-r from-red-500 to-red-700 text-white p-6 rounded-xl mb-12 text-center">
             <p className="text-xl font-bold mb-4">🚨 FLASH SALE ENDS IN:</p>
             <div className="grid grid-cols-4 gap-4 max-w-md mx-auto">
-              {['01', '00', '59', '00'].map((value, index) => (
+              {['days', 'hours', 'minutes', 'seconds'].map((interval, index) => (
                 <div key={index} className="bg-black/30 rounded-lg p-3">
-                  <div className="text-2xl font-bold mb-1">{value}</div>
+                  <div className="text-2xl font-bold mb-1">
+                    {timeLeft[interval] !== undefined ? timeLeft[interval] : '00'}
+                  </div>
                   <div className="text-xs">{['Days', 'Hours', 'Minutes', 'Seconds'][index]}</div>
                 </div>
               ))}
