@@ -38,6 +38,10 @@ export const WhatsAppFloatingButton: React.FC = () => {
     setIsFormVisible(false);
   };
 
+  const handleCancel = () => {
+    setIsFormVisible(false);
+  };
+
   return (
     <>
       <button
@@ -54,7 +58,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
           <div className="max-w-xl w-full max-h-[90vh] overflow-y-auto">
             <OrderForm
               onSubmit={handleSubmit}
-              onClose={() => setIsFormVisible(false)}
+              onCancel={handleCancel}
             />
           </div>
         </div>
